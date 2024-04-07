@@ -20,12 +20,19 @@ const task21 = (arr) =>{
 */
 const getDate = (year,month,data) =>{
 
-    let lastDayOfMonth = new Date(year, month, 0);
-    let resultDate = lastDayOfMonth.toISOString().split('T')[0];
+    // let lastDayOfMonth = new Date(year, month, 0);
+    // let resultDate = lastDayOfMonth.toISOString().split('T')[0];
+
+    // data.date = resultDate;
+
+    // return data;
+
+    const lastDayOfMonth = new Date(year, month, 0).getDate();
+    const resultDate = `${year}-${month.toString().padStart(2, '0')}-${lastDayOfMonth.toString().padStart(2, '0')}`;
 
     data.date = resultDate;
 
-    return data;
+    return data
 }
 
 /*
